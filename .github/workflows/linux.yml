@@ -134,15 +134,15 @@ jobs:
       # Construct and publish the linux binary package
       - name: Build tar.gz
         run: cd Publish/publish_linux && ./publish nightly
-      - name: Publish tar.gz
-        uses: ColinPitrat/update-release@master
-        with:
-          release: nightly
-          message: Nightly build
-          body: TRSE ${{ steps.version.outputs.TRSE_VERSION }} <br/> The latest automated nightly build of TRSE which succeeded. This is the recommended version to use.
-          files: Publish/publish_linux/trse_linux64.tar.gz
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Publish tar.gz
+#         uses: ColinPitrat/update-release@master
+#         with:
+#           release: nightly
+#           message: Nightly build
+#           body: TRSE ${{ steps.version.outputs.TRSE_VERSION }} <br/> The latest automated nightly build of TRSE which succeeded. This is the recommended version to use.
+#           files: Publish/publish_linux/trse_linux64.tar.gz
+#           prerelease: false
+#           token: ${{ secrets.GITHUB_TOKEN }}
 
       # Construct and publish the AppImage
       # Note: we're relying on the previous call to publish_linux to have copied everything that is needed under Publish/publish_linux/trse
