@@ -38,7 +38,8 @@ jobs:
           ln -s ${ANDROID_HOME}/build-tools/31.0.0/lib/d8.jar ${ANDROID_HOME}/build-tools/31.0.0/lib/dx.jar
       - run: |
           sudo apt-get update
-          sudo apt-get install qt5-default qt5-qmake qtdeclarative5-dev
+          sudo apt-get install qt5-default qt5-qmake qtdeclarative5-dev libqt5widgets5 libqt5gui5 libqt5dbus5 libqt5network5 libqt5core5a
+
           
           # For 'Verify all' tests
           # dbus-x11, at-spi2-core, libavformat58, libswscale5 and libswresample3 seem to be required by vice yet not pulled by its package
