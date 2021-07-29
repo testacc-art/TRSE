@@ -25,12 +25,12 @@ jobs:
           sed -i "s/define NIGHTLY .*/define NIGHTLY $version/" source/LeLib/data.cpp
           version=$(grep "define \(MAJOR\|FEATURE\|NIGHTLY\)" source/LeLib/data.cpp | awk '{ print $3 }' | xargs | sed 's/ /\./g')
           echo "::set-output name=TRSE_VERSION::${version}"
-      - name: Commit & Push new version
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          author_name: "Nightly Build"
-          message: "Increment nightly version"
+#       - name: Commit & Push new version
+#         uses: actions-js/push@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           author_name: "Nightly Build"
+#           message: "Increment nightly version"
 
       - run: |
           sudo apt-get update
